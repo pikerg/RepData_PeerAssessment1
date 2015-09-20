@@ -46,15 +46,6 @@ xSumPerDay <- aggregate(steps ~ date, df, sum)
 - b. Make a histogram of the total number of steps taken each day.
 
 ```{r}
-plot(xSumPerDay$date, xSumPerDay$steps, type='h',
-     main='Total Number of Steps\nTaken per Day',
-     xlab='Date',
-     ylab='Number of Steps',
-     col='#3BB9FF', lwd=5)
-```
-
-
-```{r}
 p1 <- ggplot(xSumPerDay, aes(x=date, y=steps)) +
         geom_histogram(stat='identity', fill='#3BB9FF', colour='black') +
         ggtitle('Total Number of Steps\nTaken per Day') +
